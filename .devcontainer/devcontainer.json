@@ -1,5 +1,5 @@
 {
-	"name": "Code - OSS with X11/Wayland",
+	"name": "Code - OSS",
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
@@ -12,11 +12,19 @@
 			"type": "volume"
 		}
 	],
+	"postCreateCommand": "./.devcontainer/post-create.sh",
 	"customizations": {
 		"vscode": {
+			"settings": {
+				"resmon.show.battery": false,
+				"resmon.show.cpufreq": false
+			},
 			"extensions": [
 				"mutantdino.resourcemonitor"
 			]
 		}
+	},
+	"hostRequirements": {
+		"memory": "9gb"
 	}
 }
